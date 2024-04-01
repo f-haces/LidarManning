@@ -1,17 +1,18 @@
-import os, random, cv2, pickle, laspy
+import random, cv2, laspy
+
 import numpy as np
-import matplotlib.pyplot as plt
 from tqdm.auto import tqdm
-from skspatial.objects import Plane
-from scipy.interpolate.interpnd import _ndim_coords_from_arrays
+import matplotlib.pyplot as plt
+
 from scipy.spatial import cKDTree
+from scipy.interpolate import griddata
+from skspatial.objects import Plane
+
 import torch
 from torch.nn.utils.rnn import pad_sequence
 
 import rasterio
 from rasterio.transform import from_origin
-from rasterio.enums import Resampling
-from scipy.interpolate import griddata
 
 def detrend_point_cloud(points, plane_sample=10000):
     """

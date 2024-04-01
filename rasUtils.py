@@ -1,20 +1,10 @@
-import h5py, os, shutil
 import numpy as np
-from scipy.interpolate import NearestNDInterpolator
-from sklearn.cluster import KMeans, DBSCAN, MeanShift, OPTICS
-from sklearn.preprocessing import StandardScaler
-import matplotlib.pyplot as plt
-import pandas as pd
-from tqdm.notebook import tqdm
-
-import warnings
-from tables import NaturalNameWarning
-# IGNORE SKLEARN KMEANS AND NATURAL NAME WARNINGS
-warnings.filterwarnings('ignore') 
 
 def pad_numbers(numbers):
     """
-    Pad numbers with spaces to make each number string 8 characters wide.
+    Pad numbers with spaces to make each number string 8 characters wide. 
+    This is required to overwrite HEC-RAS text geometry files, which require
+    all river stations and Manning's n to be exactly 8 characters long.
 
     Parameters:
     - numbers (list): List of numbers to be padded.
@@ -30,7 +20,8 @@ def pad_numbers(numbers):
 
 def print_padded_lines(numbers):
     """
-    Print padded lines of numbers with 9 numbers per line.
+    Print padded lines of numbers with 9 numbers per line. This is required formatting 
+    for HEC-RAS' geometry files.
 
     Parameters:
     - numbers (list): List of numbers to be printed.
