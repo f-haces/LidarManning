@@ -1,4 +1,4 @@
-# LidarManning - Measuring Manning's n from Point Clouds for Hydrodynamic Flood Models
+# LidarManning - Measuring Manning's n from Point Clouds for Hydrodynamic Flood Models [![DOI](https://zenodo.org/badge/779379669.svg)](https://zenodo.org/doi/10.5281/zenodo.10913207)
 This repository contains the necessary code to apply a laboratory-trained Deep Neural Network to measure Manning's n based on point clouds. Details of this research will be made available shortly in [LINK]. 
 
 ## Installation
